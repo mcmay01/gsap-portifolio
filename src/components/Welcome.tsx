@@ -22,7 +22,7 @@ const renderText = (text: string, className: string, baseWeight = 400) => {
 }
 
 const setupTextHover = (container, type: 'title' | 'subtitle') => {
-  if (!container) return
+  if (!container) return () => {}
 
   const letters = container.querySelectorAll('span')
 
@@ -70,8 +70,8 @@ const Welcome = () => {
     const subtitleCleanup = setupTextHover(subtitleRef.current, 'subtitle')
 
     return () => {
-      if (titleCleanup) titleCleanup()
-      if (subtitleCleanup) subtitleCleanup()
+      titleCleanup()
+      subtitleCleanup()
     }
   }, [])
 
