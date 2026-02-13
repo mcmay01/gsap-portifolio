@@ -85,7 +85,7 @@ const Welcome = () => {
       </h1>
 
       <div className='small-screen'>
-        <p>This Portifolio is designed for desktop &amp; tablet screens only</p>
+        <p>This Portifolio is designed for desktop/tablet screens only</p>
       </div>
     </section>
   )
