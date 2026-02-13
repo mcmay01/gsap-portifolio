@@ -22,7 +22,7 @@ const renderText = (text: string, className: string, baseWeight = 400) => {
 }
 
 const setupTextHover = (container, type: 'title' | 'subtitle') => {
-  if (!container) return
+  if (!container) return () => {}
 
   const letters = container.querySelectorAll('span')
 
@@ -70,8 +70,8 @@ const Welcome = () => {
     const subtitleCleanup = setupTextHover(subtitleRef.current, 'subtitle')
 
     return () => {
-      if (titleCleanup) titleCleanup()
-      if (subtitleCleanup) subtitleCleanup()
+      titleCleanup()
+      subtitleCleanup()
     }
   }, [])
 
@@ -85,7 +85,7 @@ const Welcome = () => {
       </h1>
 
       <div className='small-screen'>
-        <p>This Portifolio is designed for desktop/tablet screens only</p>
+        <p>This Portifolio is designed for desktop &amp; tablet screens only</p>
       </div>
     </section>
   )
